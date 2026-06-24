@@ -7,6 +7,8 @@ A one-click Windows installer that copies the **Yaapu Telemetry Script** onto a 
 > 이 도구는 **설치 도우미**일 뿐입니다. Yaapu 텔레메트리 스크립트 자체는 **Alessandro Apostoli (yaapu)** 님의 [FrskyTelemetryScript](https://github.com/yaapu/FrskyTelemetryScript) 이며, 실행 시 GitHub에서 최신본을 받아옵니다.
 > This is only an **installer**. The Yaapu Telemetry Script itself is by **Alessandro Apostoli (yaapu)** — see [FrskyTelemetryScript](https://github.com/yaapu/FrskyTelemetryScript). It is downloaded from GitHub at runtime.
 
+![스크린샷](https://github.com/falconshop/tx16s-yaapu-auto-installer/blob/main/screenshot.jpg)
+
 ---
 
 ## 주요 기능 / Features
