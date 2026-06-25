@@ -464,8 +464,10 @@ if ($alreadyExtracted) {
         $zip = [System.IO.Compression.ZipFile]::OpenRead("$PWD\$ZIP_NAME")
         $totalEntries = $zip.Entries.Count
         $extracted = 0
+        # 불필요 파일 제외: 외국어 사운드(de/fr/it) + 오프라인 지도 타일(숫자 폴더)
+        $EXCLUDE_RE = '/WIDGETS/yaapu/sounds/(de|fr|it)/|/IMAGES/yaapu/maps/(GoogleSatelliteMap|qgis_default|sat_tiles)/-?\d+/'
         foreach ($entry in $zip.Entries) {
-            if ($entry.FullName -match "^$EX_DIR/OTX_ETX/($SRCRES|color_common)/SD/(SCRIPTS|WIDGETS|IMAGES)/") {
+            if (($entry.FullName -match "^$EX_DIR/OTX_ETX/($SRCRES|color_common)/SD/(SCRIPTS|WIDGETS|IMAGES)/") -and ($entry.FullName -notmatch $EXCLUDE_RE)) {
                 $destPath = Join-Path $PWD $entry.FullName
                 $dir = Split-Path $destPath
                 if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir | Out-Null }
@@ -620,6 +622,13 @@ foreach ($file in $allFiles) {
         exit 1
     }
     $copied++
+}
+
+# 지도 타일은 제외했지만, 빈 지도 폴더 3개는 SD에 유지 (Yaapu 호환)
+$mapsDest = Join-Path $DEST_DRV "IMAGES\yaapu\maps"
+foreach ($mf in @("GoogleSatelliteMap", "qgis_default", "sat_tiles")) {
+    $mp = Join-Path $mapsDest $mf
+    if (-not (Test-Path $mp)) { New-Item -ItemType Directory -Path $mp -Force | Out-Null }
 }
 
 # ==============================================================================
