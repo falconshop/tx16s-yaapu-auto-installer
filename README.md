@@ -24,7 +24,7 @@ A one-click Windows installer that copies the **Yaapu Telemetry Script** onto a 
   - Yaapu config(`Enable CRSF` / `Disable all sounds`) 자동 적용
   - 부팅 시 해당 모델이 선택되도록 설정
   - **공장 출고 상태** 모델 자동 인식 → "새 조종기는 여기를 선택하세요" 안내
-
+- 시간을 단축하기 위해 영어를 제외한 독일어/프랑스어/이탈리아어 음성 및 샘플 맵타일은 복사하지 않습니다.
 ---
 
 ## 필요 조건 / Requirements
@@ -39,7 +39,7 @@ A one-click Windows installer that copies the **Yaapu Telemetry Script** onto a 
 ## 사용법 / How to use
 
 1. 이 저장소를 받습니다. **Code ▸ Download ZIP** 후 압축을 풀거나, Releases에서 내려받습니다.
-2. 압축을 푼 폴더에서 **`Yaapu_TX16S_Installer (PS).bat`** 을 더블클릭해 실행합니다.
+2. 압축을 푼 폴더에서 **`Yaapu_TX16S_Installer.bat`** 을 더블클릭해 실행합니다.
    - Windows SmartScreen 경고가 뜨면: **추가 정보(More info) ▸ 실행(Run anyway)**.
 3. 화면 안내에 따라 **언어 → 조종기 모델 → 진행 확인** 을 선택합니다.
 4. 다운로드 / 압축 해제가 끝나면, 조종기를 **USB로 연결**하고 조종기 화면에서 **USB Storage (SD)** 를 선택한 뒤, 목록에서 **SD카드 드라이브**를 고릅니다.
@@ -90,7 +90,7 @@ A one-click Windows installer that copies the **Yaapu Telemetry Script** onto a 
 
 | 파일 | 필수 | 설명 |
 |---|:---:|---|
-| `Yaapu_TX16S_Installer (PS).bat` | 설치 스크립트 본체 |
+| `Yaapu_TX16S_Installer.bat` | 설치 스크립트 본체 |
 | `model1.yml` | 드론 모델 템플릿 (MK3 드론 설치용) |
 | `drone.cfg` | Yaapu 설정 프리셋 |
 | `drone.reload` | Yaapu 설정 리로드 신호 |
